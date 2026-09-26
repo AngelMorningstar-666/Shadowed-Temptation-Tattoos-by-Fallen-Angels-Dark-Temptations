@@ -1,0 +1,473 @@
+:root {
+    --black: #090909;
+    --dark: #151515;
+    --dark-grey: #232323;
+    --gray: #b7b7b7;
+    --white: #f6f1f1;
+    --red: #9d121b;
+    --deep-red: #580a10;
+    --gold: #caa35a;
+    --shadow: rgba(0, 0, 0, 0.55);
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+.container {
+    width: min(1120px, 90%);
+    margin: 0 auto;
+} 
+
+/* Navigation */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(9, 9, 9, 0.96);
+    border-bottom: 1px solid rgba(202, 163, 90, 0.3);
+    backdrop-filter: blur(8px);
+}
+.navbar {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.brand {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+.brand-main {
+    color: var(--gold);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.brand-sub {
+    color: var(--gray);
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    list-style: none;
+}
+.nav-links a {
+    color: var(--white);
+    font-size: 0.92rem;
+    transition: color 0.2s ease;
+}
+.nav-links a:hover {
+    color: var(--gold);
+}
+.nav-booking {
+    background: var(--red);
+    border: 1px solid var(--gold);
+    padding: 10px 14px;
+    font-weight: bold;
+}
+.nav-booking:hover {
+    background: var(--deep-red);
+    color: var(--white) !important;
+}
+
+/* Hero */
+.hero {
+    min-height: 720px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.66), rgba(9, 9, 9, 0.92)), url("images/tattoo-hero.jpg") center/cover no-repeat;
+}
+
+/* Replace images/tattoo-hero.jpg with your own main tattoo/studio photo. Create an "images" folder in the same folder as index.html. */
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 30%, rgba(157, 18, 27, 0.28), transparent 43%);
+    pointer-events: none;
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 850px;
+    padding: 80px 0;
+}
+.eyebrow {
+    color: var(--gold);
+    font-size: 0.86rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+.hero h1 {
+    color: var(--white);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(2.8rem, 7vw, 5.8rem);
+    line-height: 0.95;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 5px 25px var(--shadow);
+}
+.hero h1 span {
+    display: block;
+    color: var(--gold);
+    font-size: 0.42em;
+    letter-spacing: 5px;
+    margin-top: 18px;
+}
+.hero p {
+    color: #e1e1e1;
+    font-size: 1.08rem;
+    max-width: 680px;
+    margin: 28px auto;
+}
+.button-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+.button {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    padding: 13px 22px;
+    color: var(--white);
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+.button:hover {
+    transform: translateY(-3px);
+}
+.button-primary {
+    background: var(--red);
+}
+.button-primary:hover {
+    background: var(--deep-red);
+}
+.button-secondary {
+    background: rgba(0, 0, 0, 0.38);
+}
+.button-secondary:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+/* Shared section styling */
+section {
+    padding: 90px 0;
+}
+.section-label {
+    color: var(--gold);
+    font-size: 0.82rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+.section-title {
+    color: var(--white);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    text-align: center;
+    margin-bottom: 20px;
+}
+.section-intro {
+    color: var(--gray);
+    max-width: 720px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+/* About */
+.about {
+    background: var(--dark);
+}
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+}
+.about-image {
+    min-height: 400px;
+    background: linear-gradient(rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.58)), url("images/tattoo-artist.jpg") center/cover no-repeat;
+    border: 1px solid rgba(202, 163, 90, 0.45);
+}
+.about-text h2 {
+    color: var(--gold);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2.2rem;
+    margin-bottom: 18px;
+}
+.about-text p {
+    color: var(--gray);
+    margin-bottom: 16px;
+}
+.about-list {
+    list-style: none;
+    margin-top: 24px;
+}
+.about-list li {
+    border-bottom: 1px solid #393939;
+    color: var(--white);
+    padding: 10px 0;
+}
+.about-list li::before {
+    content: "✦";
+    color: var(--gold);
+    margin-right: 10px;
+}
+
+/* Services */
+.services {
+    background: var(--black);
+}
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+.service-card {
+    background: var(--dark);
+    border: 1px solid #343434;
+    padding: 30px 25px;
+    transition: border 0.2s ease, transform 0.2s ease;
+}
+.service-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+}
+.service-icon {
+    color: var(--gold);
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+.service-card h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.45rem;
+    margin-bottom: 10px;
+}
+.service-card p {
+    color: var(--gray);
+    font-size: 0.95rem;
+}
+
+/* Gallery */
+.gallery {
+    background: var(--dark);
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+.gallery-item {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border: 1px solid #373737;
+    background: var(--dark-gray);
+}
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+.gallery-item:hover img {
+    transform: scale(1.08);
+    opacity: 0.8;
+}
+
+/* Booking */
+.booking {
+    background: linear-gradient(rgba(0, 0, 0, 0.82), rgba(35, 4, 8, 0.9)), url("images/booking-background.jpg") center/cover no-repeat;
+}   
+.booking-box {
+    background: rgba(9, 9, 9, 0.88);
+    border: 1px solid rgba(202, 163, 90, 0.5);
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 45px;
+}
+.booking-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 30px;
+}
+.full-width {
+    grid-column: 1 / -1;
+}
+label {
+    color: var(--white);
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 7px;
+}
+input, select, textarea {
+    width: 100%;
+    background: #171717;
+    border: 1px solid #444;
+    color: var(--white);
+    font: inherit;
+    padding: 12px;
+}
+input:focus, select:focus, textarea:focus {
+    border-color: var(--gold);
+    outline: none;
+}
+textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+.form-note {
+    color: var(--gray);
+    font-size: 0.84rem;
+    margin-top: 14px;
+}
+.submit-button {
+    background: var(--red);
+    border: 1px solid var(--gold);
+    color: var(--white);
+    cursor: pointer;
+    font: inherit;
+    font-weight: bold;
+    padding: 14px 20px;
+    transition: background 0.2s ease;
+}
+.submit-button:hover {
+    background: var(--deep-red);
+}
+
+/* Contact */
+.contact {
+    background: var(--black);
+}
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+.contact-card {
+    background: var(--dark);
+    border-top: 2px solid var(--gold);
+    padding: 28px;
+    text-align: center;
+}
+.contact-card h3 {
+    color: var(--gold);
+    font-family: Georgia, "Times New Roman", serif;
+    margin-bottom: 10px;
+}
+.contact-card p, .contact-card a {
+    color: var(--gray);
+}
+.contact-card a:hover {
+    color: var(--white);
+}
+
+/* Footer */
+footer {
+    background: #050505;
+    border-top: 1px solid #2d2d2d;
+    color: var(--gray);
+    padding: 28px 0;
+    text-align: center;
+}
+footer p {
+    font-size: 0.86rem;
+}
+.footer-brand {
+    color: var(--gold);
+    display: block;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        justify-content: center;
+        padding: 16px 0;
+    } 
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px;
+    }
+    .hero {
+        min-height: 620px;
+    }
+    .about-grid, .service-grid, .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .booking-form {
+        grid-template-columns: 1fr;
+    }
+    .full-width {
+        grid-column: auto;
+    }
+    .booking-box {
+        padding: 28px 20px;
+    }
+}
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero h1 {
+        font-size: 2.6rem;
+    }
+    section {
+        padding: 65px 0;
+    }
+}
+
+.form-status {
+  min-height: 24px;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.submit-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
